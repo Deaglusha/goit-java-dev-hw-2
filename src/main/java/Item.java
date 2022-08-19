@@ -23,7 +23,7 @@ public class Item {
 
     public double getPrice(long amount) {
         if (amount <= 0) {
-            throw new RuntimeException("Помилка! Сума не може бути <= 0 (" + amount + ")!");
+            throw new RuntimeException("Помилка! Сума не може бути <= 0!");
         }
 
         if (amount < promotionalAmount) {
@@ -38,7 +38,7 @@ public class Item {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
-        
+
         return Double.compare(item.price, price) == 0 &&
                 promotionalAmount == item.promotionalAmount &&
                 Double.compare(item.promotionalPrice, promotionalPrice) == 0 &&
